@@ -1,23 +1,28 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+<head>
+    <title></title>
+    <style type="text/css">
+    .container {
+        width: 400px;
+        clear: both;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+    }
 
-<!--   <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table> -->
+    </style>
+
+<div class="container">
+  <h1>Welcome to CRUD!</h1>
+  <p>Hello, !</p>
+
+<form method='post' action='/create_note'>
+  Title: <Input type='text' name='title'><br>
+  Body:  <Input type='text' name='content'><br>
+  <button>Submit</button>
+</form>
+
+
+
+
 </div>

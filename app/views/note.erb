@@ -1,8 +1,20 @@
 <div class="container">
   <p>Hello, world!</p>
-<div>
 
 
+
+
+<ul>
+    <% @notes.each do |note|%>
+  <li><a href="/note/<%= note.id %>"><%= note.title %></a><p>
+    <%= note.content %></p>
+  </li>
+  <% end %>
+
+</ul>
+
+
+</div>
 
 
 

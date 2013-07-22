@@ -1,9 +1,14 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 400px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 1px dashed black;
+  clear: both
 }
+
+.container input {
+        width: 100%;
+        clear: both;
 th {
   text-align: left;
 }

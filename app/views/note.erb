@@ -4,9 +4,10 @@
 
 
 
-  <form method='post' action='/edit_note'>
+  <form method='post' action='/display_note'>
   <button>Edit</button><input type = 'hidden' name='id' value=<%= @note.id %>>
   </form>
+  <br>
 
   <form method='post' action='/delete_note'>
   <button>Delete</button><input type = 'hidden' name='id' value=<%= @note.id %>>

@@ -1,5 +1,5 @@
 get '/' do
-@notes = Note.all
+  @notes = Note.all
   erb :index
 end
 
@@ -10,14 +10,22 @@ post '/create_note' do
 end
 
 get '/note/:id' do
-@note=Note.find(params[:id])
+  @note=Note.find(params[:id])
   erb :note
 end
 
-post '/edit_note' do
-  p params
- @note=Note.find(params[:id])
+post '/display_note' do
+  @note=Note.find(params[:id])
    erb :edit
+ end
+
+ post '/edit_note' do
+  @change_note=Note.find(params[:id])
+  @change_note.title = params[:title]
+  @change_note.content = params[:content]
+  @change_note.save
+  @notes = Note.all
+   erb :index
  end
 
 post '/delete_note' do

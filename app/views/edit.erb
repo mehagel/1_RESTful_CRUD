@@ -7,13 +7,14 @@
   
   
   <ul>
-  <li><%= @note.id %><p><%= @note.title %>
+  <li><%= @note.id %><p><%= @note.title %><br>
     <%= @note.content %></p>
   </li>
   </ul>
 
-<form method='post' action='/create_note'>
+<form method='post' action='/edit_note'>
   Title: <Input type='text' name='title'><br>
   Body:  <Input type='text' name='content'><br>
-  <button>Submit</button>
+  <button>Submit</button><input type = 'hidden' name='id' value=<%= @note.id %>>
+  </form>
 </form>

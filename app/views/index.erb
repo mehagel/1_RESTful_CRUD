@@ -12,4 +12,12 @@
   <button>Submit</button>
 </form>
 
+<ul>
+    <% @notes.each do |note|%>
+  <li><a href="/note/<%= note.id %>"><%= note.id %></a><p><%= note.title %>
+    <%= note.content %></p>
+  </li>
+  <% end %>
+  </ul>
+
 </div>

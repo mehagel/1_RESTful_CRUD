@@ -1,0 +1,19 @@
+<head>
+    <title>CRUD</title>
+</head>
+
+<div class="container">
+  <h1>EDIT CRUD!</h1>
+  
+  
+  <ul>
+  <li><%= @note.id %><p><%= @note.title %>
+    <%= @note.content %></p>
+  </li>
+  </ul>
+
+<form method='post' action='/create_note'>
+  Title: <Input type='text' name='title'><br>
+  Body:  <Input type='text' name='content'><br>
+  <button>Submit</button>
+</form>

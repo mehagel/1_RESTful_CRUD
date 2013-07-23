@@ -1,35 +1,27 @@
 get '/' do
-
+@notes = Note.all
   erb :index
 end
 
 
 post '/create_note' do
-  @notes = Note.all
   Note.create(params)
+  redirect '/'
+end
+
+get '/note/:id' do
+@note=Note.find(params[:id])
   erb :note
 end
 
-get '/note/id'
-@notes = Note.all
-p params[:id]
-# @note=Note.find(params[:id])
-erb :note
- redirect '/'
-end
+post '/edit_note' do
+  p params
+ @note=Note.find(params[:id])
+   erb :edit
+ end
 
-
-# post '/edit_note' do
-
-
-
-
-#    erb :index
-#  end
-
-# post '/delete_note' do
-
-#   # Note.find(params[:id]).destroy
-
-#    erb :index
-#  end
+post '/delete_note' do
+  p params
+  Note.find(params[:id]).destroy
+   redirect '/'
+ end

@@ -1,22 +1,25 @@
+
 <div class="container">
-  <p>Hello, world!</p>
+  <p>Notes!</p>
 
 
 
+  <form method='post' action='/edit_note'>
+  <button>Edit</button><input type = 'hidden' name='id' value=<%= @note.id %>>
+  </form>
+
+  <form method='post' action='/delete_note'>
+  <button>Delete</button><input type = 'hidden' name='id' value=<%= @note.id %>>
+  </form>
 
 <ul>
-    <% @notes.each do |note|%>
-  <li><a href="/note/<%= note.id %>"><%= note.title %></a><p>
-    <%= note.content %></p>
-  </li>
-  <% end %>
 
-</ul>
+  <li><%= @note.id %><p><%= @note.title %>
+    <%= @note.content %></p>
+  </li>
+  </ul>
 
 
 </div>
-
-
-
 
 

@@ -5,17 +5,19 @@
 <div class="container">
   <h1>Welcome to CRUD!</h1>
   <p>Hello, minons!</p>
+  <p>Please enter a note with a Title and Body!</p><br/>
 
 <form method='post' action='/create_note'>
   Title: <Input type='text' name='title'><br>
   Body:  <Input type='text' name='content'><br>
   <button>Submit</button>
-</form>
+</form><br/>
 
+<p> Please click on one of the notes to edit or delete</p>
 <ul>
     <% @notes.each do |note|%>
-  <li><a href="/note/<%= note.id %>"><%= note.id %></a><p><%= note.title %>
-    <%= note.content %></p>
+  <li><a href="/note/<%= note.id %>"><%= note.title %></a>
+    <p><%= note.content %></p>
   </li>
   <% end %>
   </ul>

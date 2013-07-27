@@ -6,6 +6,7 @@ end
 
 post '/create_note' do
   Note.create(params)
+  @notes = Note.all
   redirect '/'
 end
 
@@ -13,11 +14,6 @@ get '/note/:id' do
   @note=Note.find(params[:id])
   erb :note
 end
-
-post '/display_note' do
-  @note=Note.find(params[:id])
-   erb :edit
- end
 
  post '/edit_note' do
   @change_note=Note.find(params[:id])

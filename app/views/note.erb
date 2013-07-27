@@ -3,23 +3,22 @@
   <p>Notes!</p>
 
 
+  <p>Please either edit or delete a note!</p><br/>
 
-  <form method='post' action='/display_note'>
-  <button>Edit</button><input type = 'hidden' name='id' value=<%= @note.id %>>
-  </form>
+  <form method='post' action='/edit_note'>
+    Title: <Input type='text' name='title'><br>
+    Body:  <Input type='text' name='content'><br>
+    <button>Edit</button><input type = 'hidden' name='id' value=<%= @note.id %>>
+  </form><br/>
   <br>
-
-  <form method='post' action='/delete_note'>
-  <button>Delete</button><input type = 'hidden' name='id' value=<%= @note.id %>>
-  </form>
-
-<ul>
-
-  <li><%= @note.id %><p><%= @note.title %>
-    <%= @note.content %></p>
-  </li>
+  <ul>
+    <li><%= @note.title %><p>
+     <%= @note.content %></p>
+    </li>
   </ul>
-
+    <form method='post' action='/delete_note'>
+    <button>Delete</button><input type = 'hidden' name='id' value=<%= @note.id %>>
+  </form>
 
 </div>
 

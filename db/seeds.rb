@@ -1,7 +1,5 @@
+require 'faker'
 
-
-car_wash = Note.create(title: "Wash Car", content: "take car to car wash") 
-paint_room = Note.create(title: "paint room", content: "paint bedroom") 
-walk_dog = Note.create(title: "walk dog", content: "take dog to park")
-pick_up_kids = Note.create(title: "pick up kids", content: "pick up kids from soccer")
-
+20.times do 
+	Note.create(title:Faker::Company.bs, content:Faker::Company.catch_phrase)
+end
